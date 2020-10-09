@@ -1,0 +1,34 @@
+server:
+  port: 8086
+    
+# ddl-auto: create erstellt eine Tabelle falls nicht vorhanden, beim runterfahren Tabelle bleibt erhalten Datensätze werden alle gelöscht
+# ddl-auto: create-drop erstellt eine Tabelle falls nicht vorhanden, beim runterfahren Tabelle wird  gelöscht
+# ddl-auto: upadte  erstellt eine Tabelle falls nicht vorhanden, beim runterfahren Tabelle bleibt erhalten Datensätze bleinen erhalten
+
+spring:
+    jpa:
+        hibernate:
+            ddl-auto: create-drop
+    h2:
+        console:
+            enabled: true
+    datasource:
+        platform: h2
+        url: jdbc:h2:mem:mydb
+        
+#spring:
+#    datasource:
+#        url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/db_salva?createDatabaseIfNotExist=true
+#        username: salva
+#        password: salva
+#        driver-class-name: com.mysql.jdbc.Driver
+#
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
+
+
